@@ -1,17 +1,55 @@
 ﻿using System;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CarLotSimulator
 {
-    class Program
+    public class Progam
     {
-        static void Main(string[] args)
-        {
-            //TODO
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
+        //Create a seperate class file called Car
+        //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
+
+
+        //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
+        //The methods should take one string parameter: the respective noise property
+
+        static void Main()
+        {
+            Car car1 = new Car();
+            car1.Year = 2021;
+            car1.Make = "Subaru";
+            car1.Model = "WRX";
+            car1.IsDriveable = true;
+
+            car1.MakeEngineNoise("loud whiny");
+            car1.MakeHonkNoise("boop boop");
+
+            Console.WriteLine(car1.EngineNoise);
+            Console.WriteLine(car1.HonkNoise);
+            Console.WriteLine("--------------");
+
+            Car car2 = new Car() { Year = 2021, Make = "subaru", Model = "STI", IsDriveable = true };
+
+            car2.MakeEngineNoise("too quiet");
+            car2.MakeHonkNoise("weeeeeeeeee");
+
+
+            Console.WriteLine(car2.EngineNoise);
+            Console.WriteLine(car2.HonkNoise);
+            Console.WriteLine("--------------");
+
+            Car car3 = new Car(2021, "Mits", "EVO", "beep beep");
+
+            car3.MakeEngineNoise("wrrrrrrrrrrrr");
+            car3.MakeHonkNoise("beep beep");
+
+            Console.WriteLine(car3.EngineNoise);
+            Console.WriteLine(car3.HonkNoise);
+            Console.WriteLine("-----------");
+        }
+        
+            
 
 
             //Now that the Car class is created we can instanciate 3 new cars
@@ -29,5 +67,6 @@ namespace CarLotSimulator
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
         }
-    }
 }
+
+
