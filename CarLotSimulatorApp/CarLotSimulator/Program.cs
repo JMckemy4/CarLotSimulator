@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Channels;
 
 namespace CarLotSimulator
 {
@@ -14,7 +15,7 @@ namespace CarLotSimulator
         //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
         //The methods should take one string parameter: the respective noise property
 
-        static void Main()
+       public static void Main()
         {
             Car car1 = new Car();
             car1.Year = 2021;
@@ -25,10 +26,13 @@ namespace CarLotSimulator
             car1.MakeEngineNoise("loud whiny");
             car1.MakeHonkNoise("boop boop");
 
+           
+
+
             Console.WriteLine(car1.EngineNoise);
             Console.WriteLine(car1.HonkNoise);
             Console.WriteLine("--------------");
-
+       
             Car car2 = new Car() { Year = 2021, Make = "subaru", Model = "STI", IsDriveable = true };
 
             car2.MakeEngineNoise("too quiet");
@@ -48,6 +52,7 @@ namespace CarLotSimulator
             Console.WriteLine(car3.HonkNoise);
             Console.WriteLine("-----------");
         }
+            
         
             
 
