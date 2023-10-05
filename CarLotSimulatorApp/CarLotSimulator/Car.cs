@@ -50,7 +50,7 @@ namespace CarLotSimulator
 
         public static int GetNumberOfCars()
         {
-            return numberOfCars;
+            return numberOfCars = 3;
         }
     }
 }

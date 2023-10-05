@@ -7,10 +7,10 @@ namespace CarLotSimulator
     {
         public static int numberOfCars;
 
+
         // A list to store the cars in the car lot
         public List<Car> carList { get; set; } = new List<Car>();
 
-        
     }
 }
 
